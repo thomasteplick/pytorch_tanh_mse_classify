@@ -209,7 +209,7 @@ class NeuralNetwork(nn.Module):
 def runLinearTanhMSE():
     
     parser = argparse.ArgumentParser(prog='linear_tanh_mse', description="MLP neural network (Tanh, Mean Square Error Loss) for classification using PyTorch")
-    parser.add_argument('epochs', type=int, choices=[20, 100, 200, 500, 1000, 2000, 5000, 10000], help="the number of epochs for training and testing")
+    parser.add_argument('epochs', type=int, choices=[100, 200, 500, 1000, 2000, 5000, 10000], help="the number of epochs for training and testing")
     parser.add_argument('batch_size', type=int, choices=[1, 2, 10, 16, 32, 64], help="the batch size for training and testing")
     parser.add_argument('learning_rate', type=float, choices=[.001, .002, .01, .02], help="learning rate hyperparameter for training")
     parser.add_argument('momentum', type=float, choices=[.5, .6, .7, .8, .9], help="momentum hyperparameter for training")
