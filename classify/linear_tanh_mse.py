@@ -235,10 +235,15 @@ def runLinearTanhMSE():
     hidden_layers = args.hidden_layers   
     # features of the layers or width
     features = args.features
+    
+    # min and max of property deltas
+    lodelta = 25
+    hidelta = 50
 
     maxProp = 256
-    maxBegin = maxProp//2
+    
     nsamples = epochs*batch_size
+    
     linearTanhMSEModel = "data\\linearTanhMSE.pth"
     linearTanhMSEData = "data\\linearTanhMSE.txt"
    
@@ -254,9 +259,23 @@ def runLinearTanhMSE():
                     propbegin[cls][prop] = int(bounds[2*prop])
                     propend[cls][prop] = int(bounds[2*prop+1])
                 cls += 1
-    else:
-        propbegin = torch.randint(0, maxBegin, (nclasses, nproperties), dtype = torch.uint8)   
-        propend=torch.randint(1, maxBegin, (nclasses, nproperties), dtype=torch.uint8) + propbegin
+    else:        
+        # split the properties in half, assign first half starting in (0, maxProperty/2), second half ending in (maxProperty/2, maxProperty) 
+        
+        # first half, start in (0, maxProperty/2)
+        propbegin[:, 0:nproperties//2] = torch.randint(0, maxProp//2, (nclasses, nproperties//2), dtype=torch.uint8)
+        propend[:, 0:nproperties//2] = propbegin[:, 0:nproperties//2]  + \
+            torch.randint(lodelta, hidelta, (nclasses, nproperties//2), dtype=torch.uint8)
+        
+        # second half, end in (maxProperty/2, maxProperty)
+        propend[:, nproperties//2:nproperties] = torch.randint(maxProp//2, maxProp, (nclasses, nproperties//2), dtype=torch.uint8)
+        propbegin[:, nproperties//2:nproperties] = propend[:, nproperties//2:nproperties] - \
+            torch.randint(lodelta, hidelta, (nclasses, nproperties//2), dtype=torch.uint8)
+            
+        # shuffle the properties of each class, create a permutation of arange(nproperties)
+        perm = torch.randperm(nproperties)
+        propbegin = propbegin[:, perm]
+        propend = propend[:, perm]
     
     # Input data and the target tensors comprise the samples used to train the ANN
     input_data = torch.empty(nsamples, nproperties, dtype=torch.uint8)
