@@ -27,8 +27,29 @@ size is greater than one.  This means that the weight and bias corrections are d
 increase the %correct up to a certain value and then it levels off with no further increase.
 </p>
 <p>
-This program uses PyTorch without CUDA or a GPU, Python 3.13, Matplotlib.Py, and Numpy.
+This program uses PyTorch (without a GPU), Python 3.13, Matplotlib.Py, and Numpy.
 </p>
+
+<pre>
+C:\Users\Thoma\eclipse-workspace\PyTorchClassify\classify>linear_relu_crossentropy.py -h
+usage: linear_relu_crossentry [-h] {100,200,500,1000,2000,5000,10000} {1,2,10,16,32,64} {0.001,0.002,0.01,0.02} {0.5,0.6,0.7,0.8,0.9} {1,2,3} {10,15,20}
+
+MLP neural network (Tanh, Mean Square Error Loss) for classification using PyTorch
+
+positional arguments:
+  {100,200,500,1000,2000,5000,10000}
+                        the number of epochs for training and testing
+  {1,2,10,16,32,64}     the batch size for training and testing
+  {0.001,0.002,0.01,0.02}
+                        learning rate hyperparameter for training
+  {0.5,0.6,0.7,0.8,0.9}
+                        momentum hyperparameter for training
+  {1,2,3}               number of hidden layers, depth of MLP
+  {10,15,20}            hidden layer width
+
+options:
+  -h, --help            show this help message and exit  
+</pre>
 
 <h4>Class Property Distribution, Uniform, 10 properties, 4 classes</h4>
 <img width="635" height="550" alt="image" src="https://github.com/user-attachments/assets/d7b2dc23-5794-4665-b9a3-5ca3e19c747e" />
