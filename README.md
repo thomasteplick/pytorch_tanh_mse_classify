@@ -103,5 +103,50 @@ Elapsed time: 0:00:00.565885 Test Results:
 </pre>
 <h4>Learning Curve, 5000 batches, batch size = 1, learning rate = .001, momentum = 0.5, 3 hidden layers, 15 features per layer</h4>
 <img width="636" height="548" alt="image" src="https://github.com/user-attachments/assets/7b619349-9efa-4ea1-9d2c-e76b7b099efd" />
+<pre>
+C:\Users\Thoma\eclipse-workspace\PyTorchTanhMSE\classify>linear_tanh_mse.py 5000 1 .001 .5 2 20
+Using cpu device
+Model: NeuralNetwork(
+  (linear_tanh_stack): Sequential(
+    (0): Linear(in_features=10, out_features=20, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=20, out_features=20, bias=True)
+    (3): Tanh()
+    (4): Linear(in_features=20, out_features=2, bias=True)
+  )
+)
+Display the class distributions
+Begin training the model: 2026-11-10 09:15:16.711705
+**************************************************
+**************************************************
+...
+...
+**************************************************
+**************************************************
+**************************************************
+
+Done training: 2026-11-10 13:53:28.691203
+Elapsed time: 4:38:11.979498
+Display the Mean Square Error Loss
+Saved PyTorch Model State to data\linearTanhMSE.pth
+Begin testing the model: 2026-11-10 14:37:53.394817
+
+Done testing.  2026-11-10 14:37:53.951202
+Elapsed time: 0:00:00.556385 Test Results:
+|--------|--------|--------|--------|
+|Class   |Count   |Correct |%Correct|
+|--------|--------|--------|--------|
+|1       |1240    |1236    |99      |
+|--------|--------|--------|--------|
+|2       |1262    |1195    |94      |
+|--------|--------|--------|--------|
+|3       |1172    |854     |72      |
+|--------|--------|--------|--------|
+|4       |1326    |967     |72      |
+|--------|--------|--------|--------|
+|Totals  |5000    |4252    |85      |
+|--------|--------|--------|--------|
+</pre>
 <h4>Learning Curve, 5000 batches, batch size = 1, learning rate = .001, momentum = 0.5, 2 hidden layers, 20 features per layer</h4>
+<img width="633" height="551" alt="image" src="https://github.com/user-attachments/assets/b109a47d-5fbd-4f01-96af-cab7b5a5933d" />
 
