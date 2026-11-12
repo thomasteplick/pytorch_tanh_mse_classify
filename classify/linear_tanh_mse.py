@@ -66,16 +66,16 @@ class NeuralNetwork(nn.Module):
     def createSamples(self, nsamples, input_data, target, propbegin, propend):
         # Create the input data and the target.  The target is encoded to noutputs size
         for samp in range(nsamples):
+            cls = torch.randint(0, nclasses, (1,1), dtype=torch.uint8)
+            # Encode the target to noutputs in (-1,1)
+            shift = 0
+            for i in range(noutputs):
+                if (cls & 1 << shift) > 0:
+                    target[samp][i] = 1
+                else:
+                    target[samp][i] = -1
+                shift += 1
             for prop in range(nproperties):
-                cls = torch.randint(0, nclasses, (1,1), dtype=torch.uint8)
-                # Encode the target to noutputs in (-1,1)
-                shift = 0
-                for i in range(noutputs):
-                    if (cls & 1 << shift) > 0:
-                        target[samp][i] = 1
-                    else:
-                        target[samp][i] = -1
-                    shift += 1
                 input_data[samp][prop] = torch.randint(propbegin[cls.item()][prop], 
                     propend[cls.item()][prop], (1,1), dtype=torch.uint8).item()
     
