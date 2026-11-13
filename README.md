@@ -27,7 +27,7 @@ size is greater than one.  This means that the weight and bias corrections are d
 increase the %correct up to a certain value and then it levels off with no further increase.
 </p>
 <p>
-This program uses PyTorch (without a GPU), Python 3.13, Matplotlib.Py, and Numpy.
+This program uses PyTorch (without a GPU), Python 3.13, Matplotlib, and Numpy.
 </p>
 
 <pre>
