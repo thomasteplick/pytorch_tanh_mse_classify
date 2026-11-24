@@ -52,7 +52,7 @@ options:
 </pre>
 
 <h4>Class Property Distribution, Uniform, 10 properties, 4 classes</h4>
-<img width="635" height="548" alt="image" src="https://github.com/user-attachments/assets/08222425-670d-47cc-b014-b611d914317a" />
+<img width="636" height="551" alt="image" src="https://github.com/user-attachments/assets/335716ae-a613-44a4-bb15-848daabf15e5" />
 <pre>
 C:\Users\Thoma\eclipse-workspace\PyTorchTanhMSE\classify>linear_tanh_mse.py 1000 1 .001 .5 3 15
 Using cpu device
@@ -68,7 +68,7 @@ Model: NeuralNetwork(
   )
 )
 Display the class distributions
-Begin training the model: 2026-11-12 15:36:57.867009
+Begin training the model: 2026-11-24 15:00:08.403817
 **************************************************
 **************************************************
 **************************************************
@@ -90,30 +90,30 @@ Begin training the model: 2026-11-12 15:36:57.867009
 **************************************************
 **************************************************
 
-Done training: 2026-11-12 15:46:34.954234
-Elapsed time: 0:09:37.087225
+Done training: 2026-11-24 15:08:22.755828
+Elapsed time: 0:08:14.352011
 Display the Mean Square Error Loss
 Saved PyTorch Model State to data\linearTanhMSE.pth
-Begin testing the model: 2026-11-12 15:48:42.032579
+Begin testing the model: 2026-11-24 15:12:15.269118
 
-Done testing.  2026-11-12 15:48:42.125712
-Elapsed time: 0:00:00.093133 Test Results:
+Done testing.  2026-11-24 15:12:15.372490
+Elapsed time: 0:00:00.103372 Test Results:
 |--------|--------|--------|--------|
 |Class   |Count   |Correct |%Correct|
 |--------|--------|--------|--------|
-|1       |244     |244     |100     |
+|1       |246     |246     |100     |
 |--------|--------|--------|--------|
-|2       |252     |252     |100     |
+|2       |227     |227     |100     |
 |--------|--------|--------|--------|
-|3       |255     |255     |100     |
+|3       |266     |266     |100     |
 |--------|--------|--------|--------|
-|4       |249     |249     |100     |
+|4       |261     |261     |100     |
 |--------|--------|--------|--------|
 |Totals  |1000    |1000    |100     |
 |--------|--------|--------|--------|
 </pre>
 <h4>Learning Curve, 1000 batches, batch size = 1, learning rate = .001, momentum = 0.5, 3 hidden layers, 15 features per layer</h4>
-<img width="639" height="553" alt="image" src="https://github.com/user-attachments/assets/263a151b-8737-463b-a297-0546eb653329" />
+<img width="638" height="546" alt="image" src="https://github.com/user-attachments/assets/23b10cb8-4e5b-4a4a-b82d-cea007ef3203" />
 <pre>
 C:\Users\Thoma\eclipse-workspace\PyTorchTanhMSE\classify>linear_tanh_mse.py 1000 1 .001 .5 2 20
 Using cpu device
@@ -127,7 +127,7 @@ Model: NeuralNetwork(
   )
 )
 Display the class distributions
-Begin training the model: 2026-11-12 15:51:10.894649
+Begin training the model: 2026-11-24 15:14:23.686550
 **************************************************
 **************************************************
 **************************************************
@@ -149,29 +149,30 @@ Begin training the model: 2026-11-12 15:51:10.894649
 **************************************************
 **************************************************
 
-Done training: 2026-11-12 16:04:52.108309
-Elapsed time: 0:13:41.213660
+Done training: 2026-11-24 15:30:35.649483
+Elapsed time: 0:16:11.962933
 Display the Mean Square Error Loss
 Saved PyTorch Model State to data\linearTanhMSE.pth
-Begin testing the model: 2026-11-12 16:06:18.596620
+Begin testing the model: 2026-11-24 15:32:48.107852
 
-Done testing.  2026-11-12 16:06:18.673664
-Elapsed time: 0:00:00.077044 Test Results:
+Done testing.  2026-11-24 15:32:48.371864
+Elapsed time: 0:00:00.264012 Test Results:
 |--------|--------|--------|--------|
 |Class   |Count   |Correct |%Correct|
 |--------|--------|--------|--------|
-|1       |262     |262     |100     |
+|1       |244     |244     |100     |
 |--------|--------|--------|--------|
-|2       |241     |241     |100     |
+|2       |234     |234     |100     |
 |--------|--------|--------|--------|
-|3       |254     |254     |100     |
+|3       |285     |285     |100     |
 |--------|--------|--------|--------|
-|4       |243     |243     |100     |
+|4       |237     |237     |100     |
 |--------|--------|--------|--------|
 |Totals  |1000    |1000    |100     |
 |--------|--------|--------|--------|
 </pre>
 <h4>Learning Curve, 1000 batches, batch size = 1, learning rate = .001, momentum = 0.5, 2 hidden layers, 20 features per layer</h4>
-<img width="637" height="552" alt="image" src="https://github.com/user-attachments/assets/9347c7d6-abfe-4321-8ebd-98216b04f627" />
+<img width="635" height="549" alt="image" src="https://github.com/user-attachments/assets/db18aab0-aebb-4f00-b7ea-ac74e69c84b5" />
+
 
 
